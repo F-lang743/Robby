@@ -4,9 +4,6 @@ Demo script showing Robby's command processing capabilities
 This script demonstrates the command system without requiring voice input
 """
 
-import sys
-sys.path.insert(0, '/home/runner/work/Robby/Robby')
-
 from robby import Robby
 
 

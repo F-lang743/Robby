@@ -4,9 +4,6 @@ Test script for Robby voice assistant
 Tests command processing without requiring actual voice input
 """
 
-import sys
-sys.path.insert(0, '/home/runner/work/Robby/Robby')
-
 from robby import Robby
 
 
