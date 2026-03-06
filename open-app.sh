@@ -45,6 +45,34 @@ echo "Dependencies installed successfully!"
 echo "====================================="
 echo ""
 
+# Function to start Metro bundler in a new terminal
+start_metro() {
+    echo "Step 2: Starting Metro bundler..."
+    echo "NOTE: Metro will start in the background. Keep it running."
+    echo ""
+    
+    # Start Metro in a new terminal window (works on macOS)
+    if [[ "$OSTYPE" == "darwin"* ]]; then
+        osascript -e 'tell app "Terminal" to do script "cd \"'"$(pwd)"'\" && npm start"'
+    else
+        # For Linux, try to use gnome-terminal, xterm, or konsole
+        if command -v gnome-terminal &> /dev/null; then
+            gnome-terminal -- bash -c "cd '$(pwd)' && npm start; exec bash"
+        elif command -v xterm &> /dev/null; then
+            xterm -e "cd '$(pwd)' && npm start" &
+        elif command -v konsole &> /dev/null; then
+            konsole -e "cd '$(pwd)' && npm start" &
+        else
+            echo "WARNING: Could not open a new terminal window."
+            echo "Please run 'npm start' in a separate terminal."
+            read -p "Press Enter when Metro is running..."
+        fi
+    fi
+    
+    # Wait a few seconds for Metro to start
+    sleep 5
+}
+
 # Ask user to select platform
 echo "Please select your platform:"
 echo "  1. iOS"
@@ -56,30 +84,7 @@ if [ "$platform" = "1" ]; then
     echo ""
     echo "Selected: iOS"
     echo ""
-    echo "Step 2: Starting Metro bundler..."
-    echo "NOTE: Metro will start in the background. Keep it running."
-    echo ""
-    
-    # Start Metro in a new terminal window (works on macOS)
-    if [[ "$OSTYPE" == "darwin"* ]]; then
-        osascript -e 'tell app "Terminal" to do script "cd \"'"$(pwd)"'\" && npm start"'
-    else
-        # For Linux, try to use gnome-terminal, xterm, or konsole
-        if command -v gnome-terminal &> /dev/null; then
-            gnome-terminal -- bash -c "cd '$(pwd)' && npm start; exec bash"
-        elif command -v xterm &> /dev/null; then
-            xterm -e "cd '$(pwd)' && npm start" &
-        elif command -v konsole &> /dev/null; then
-            konsole -e "cd '$(pwd)' && npm start" &
-        else
-            echo "WARNING: Could not open a new terminal window."
-            echo "Please run 'npm start' in a separate terminal."
-            read -p "Press Enter when Metro is running..."
-        fi
-    fi
-    
-    # Wait a few seconds for Metro to start
-    sleep 5
+    start_metro
     
     echo ""
     echo "Step 3: Building and launching iOS app..."
@@ -91,30 +96,7 @@ elif [ "$platform" = "2" ]; then
     echo ""
     echo "Selected: Android"
     echo ""
-    echo "Step 2: Starting Metro bundler..."
-    echo "NOTE: Metro will start in the background. Keep it running."
-    echo ""
-    
-    # Start Metro in a new terminal window (works on macOS)
-    if [[ "$OSTYPE" == "darwin"* ]]; then
-        osascript -e 'tell app "Terminal" to do script "cd \"'"$(pwd)"'\" && npm start"'
-    else
-        # For Linux, try to use gnome-terminal, xterm, or konsole
-        if command -v gnome-terminal &> /dev/null; then
-            gnome-terminal -- bash -c "cd '$(pwd)' && npm start; exec bash"
-        elif command -v xterm &> /dev/null; then
-            xterm -e "cd '$(pwd)' && npm start" &
-        elif command -v konsole &> /dev/null; then
-            konsole -e "cd '$(pwd)' && npm start" &
-        else
-            echo "WARNING: Could not open a new terminal window."
-            echo "Please run 'npm start' in a separate terminal."
-            read -p "Press Enter when Metro is running..."
-        fi
-    fi
-    
-    # Wait a few seconds for Metro to start
-    sleep 5
+    start_metro
     
     echo ""
     echo "Step 3: Building and launching Android app..."

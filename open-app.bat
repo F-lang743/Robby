@@ -57,18 +57,18 @@ echo   2. Android
 echo.
 set /p platform="Enter your choice (1 or 2): "
 
+echo.
+echo Step 2: Starting Metro bundler...
+echo NOTE: Metro will start in a new window. Keep it running.
+echo.
+start "Metro Bundler" cmd /k "npm start"
+
+REM Wait a few seconds for Metro to start
+timeout /t 5 /nobreak >nul
+
 if "%platform%"=="1" (
     echo.
     echo Selected: iOS
-    echo.
-    echo Step 2: Starting Metro bundler...
-    echo NOTE: Metro will start in a new window. Keep it running.
-    echo.
-    start "Metro Bundler" cmd /k "npm start"
-    
-    REM Wait a few seconds for Metro to start
-    timeout /t 5 /nobreak >nul
-    
     echo.
     echo Step 3: Building and launching iOS app...
     echo Running: npm run ios
@@ -78,15 +78,6 @@ if "%platform%"=="1" (
 ) else if "%platform%"=="2" (
     echo.
     echo Selected: Android
-    echo.
-    echo Step 2: Starting Metro bundler...
-    echo NOTE: Metro will start in a new window. Keep it running.
-    echo.
-    start "Metro Bundler" cmd /k "npm start"
-    
-    REM Wait a few seconds for Metro to start
-    timeout /t 5 /nobreak >nul
-    
     echo.
     echo Step 3: Building and launching Android app...
     echo Running: npm run android
