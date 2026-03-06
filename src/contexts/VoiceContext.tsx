@@ -9,7 +9,7 @@ import React, {
 import Voice, {
   SpeechResultsEvent,
   SpeechErrorEvent,
-} from '@react-native-voice/voice';
+} from 'react-native-voice';
 import Tts from 'react-native-tts';
 
 interface VoiceContextType {
