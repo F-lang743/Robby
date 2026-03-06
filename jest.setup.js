@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler/jestSetup';
 
-jest.mock('react-native-voice', () => ({
+jest.mock('@react-native-voice/voice', () => ({
   default: {
     start: jest.fn(),
     stop: jest.fn(),
@@ -42,3 +42,16 @@ jest.mock('react-native-maps', () => {
     Polyline: View,
   };
 });
+
+jest.mock('@react-native-async-storage/async-storage', () => ({
+  default: {
+    setItem: jest.fn(() => Promise.resolve()),
+    getItem: jest.fn(() => Promise.resolve(null)),
+    removeItem: jest.fn(() => Promise.resolve()),
+    multiGet: jest.fn(() => Promise.resolve([])),
+    multiSet: jest.fn(() => Promise.resolve()),
+    multiRemove: jest.fn(() => Promise.resolve()),
+    clear: jest.fn(() => Promise.resolve()),
+    getAllKeys: jest.fn(() => Promise.resolve([])),
+  },
+}));
