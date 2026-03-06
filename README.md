@@ -2,6 +2,22 @@
 
 A mobile voice-based AI assistant companion for truck drivers. Designed to provide helpful, hands-free features that make life on the road easier and more efficient.
 
+## 📱 INSTALL ON YOUR PHONE - SUPER EASY!
+
+**Want the Robby app with a blue truck icon on your home screen?**
+
+### 🎯 3 Simple Steps:
+
+1. **Connect your phone** to your computer with USB cable
+2. **Run the installer:** `./open-app.sh` (Mac/Linux) or `open-app.bat` (Windows)
+3. **Choose your platform:** Type `1` for iOS or `2` for Android
+
+**That's it!** Wait 2-3 minutes and the blue truck icon will appear on your phone! 🚛
+
+📖 **Detailed Guide:** See [INSTALL_ON_MY_PHONE.md](INSTALL_ON_MY_PHONE.md) or [INSTALL_QUICK_GUIDE.txt](INSTALL_QUICK_GUIDE.txt)
+
+---
+
 ## 🎯 App Icon
 
 **Blue truck icon on your home screen!** When you install Robby, you'll see a distinctive blue truck icon. Just tap it to open the app!
