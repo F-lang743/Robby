@@ -2,6 +2,24 @@
 
 A mobile voice-based AI assistant companion for truck drivers. Designed to provide helpful, hands-free features that make life on the road easier and more efficient.
 
+## 🚀 ONE-BUTTON QUICK START
+
+**Want to open the app with just one command?**
+
+### Mac/Linux:
+```bash
+./open-app.sh
+```
+
+### Windows:
+```batch
+open-app.bat
+```
+
+**That's it!** The script automatically installs dependencies, starts Metro, and launches the app.
+
+See [ONE_BUTTON_LAUNCHER.md](ONE_BUTTON_LAUNCHER.md) for details.
+
 ## Features
 
 ### Core Functionality
