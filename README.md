@@ -1,6 +1,12 @@
-# Robby - Truck Assistant
+# 🚛 Robby - Truck Assistant
 
 A mobile voice-based AI assistant companion for truck drivers. Designed to provide helpful, hands-free features that make life on the road easier and more efficient.
+
+## 🎯 App Icon
+
+**Blue truck icon on your home screen!** When you install Robby, you'll see a distinctive blue truck icon. Just tap it to open the app!
+
+See [ICON_READY.md](ICON_READY.md) for details about the truck icon.
 
 ## 🚀 ONE-BUTTON QUICK START
 
